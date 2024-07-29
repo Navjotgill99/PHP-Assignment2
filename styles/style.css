@@ -1,0 +1,67 @@
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+img {
+    max-width: 50px;
+    max-height: 20px;
+}
+
+/* Links */
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* hover */
+.topnav a:hover {
+    background-color: red;
+    color: black;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: url(https://www.kymillman.com/wp-content/uploads/f1/gallery/images/BEL%2023%20R31_4531.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px;
+    margin-left: 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    background-color: #fff;
+}
+
+th {
+    background-color: #ddd;
+}
+
+h2 {
+    color: black;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-evenly;
+}
