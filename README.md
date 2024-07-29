@@ -1,4 +1,4 @@
-# PHP-Assignment1-Jerry
+# PHP-Assignment2
 
 ## NOTES:
 - This app can take data from the database and display it on the webpage.
