@@ -18,7 +18,7 @@ $result = mysqli_query( $connect, $query );
 
 <div>
     <h2> Manage Drivers</h2>
-    <a href="#">Add Driver</a>
+    <a href="#" class="btn">Add Driver</a>
     <table>
         <tr>
             <th>ID</th>

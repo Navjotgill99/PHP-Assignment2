@@ -18,15 +18,21 @@ $root_dir = "/PHP-Assignment2/";
 <body>
   <nav>
     <div class="topnav">
-      <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png"
-          alt="formula 1 logo"></a>
-      <a href=<?php echo $root_dir?>>Home</a>
-      <?php if (isset($_SESSION['id'])) { ?>
-        <a href=<?php echo "{$root_dir}admin/index.php" ?>>Dashboard</a>
-        <a href=<?php echo "{$root_dir}admin/logout.php" ?>>Logout</a>
-      <?php } else { ?>
-        <a href=<?php echo "{$root_dir}admin/login.php" ?>>Login</a>
-      <?php } ?>
+      <a class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png"
+          alt="formula 1 logo">
+        </a>
+      <ul class="menu-list">
+        <li>
+          <a href=<?php echo $root_dir?>>Home</a>
+        </li>
+          <?php if (isset($_SESSION['id'])) { ?>
+            <li><a href=<?php echo "{$root_dir}admin/index.php" ?>>Dashboard</a></li>
+            <li><a href=<?php echo "{$root_dir}admin/logout.php" ?>>Logout</a></li>
+            <?php } else { ?>
+              <li><a href=<?php echo "{$root_dir}admin/login.php" ?>>Login</a></li>
+              <?php } ?>
+      </ul>
     </div>
   </nav>
   <main>

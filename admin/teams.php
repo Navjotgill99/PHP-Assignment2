@@ -16,7 +16,7 @@ $result = mysqli_query( $connect, $query );
 
 <div>
     <h2>Manage Teams</h2>
-    <a href="#">Add Team</a>
+    <a href="#" class="btn">Add Team</a>
     <table>
         <tr>
             <th>ID</th>

@@ -45,20 +45,18 @@ include '../reusable/nav.php' ;
 
 <div style="max-width: 400px; margin:auto">
 
-  <form method="post">
-
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
-
-    <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-
-    <br>
-
+  <form method="post" id="login">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username">
+    </div>
+    
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password">
+    </div>
+  
     <input type="submit" name="submit" value="Login">
-
   </form>
   
 </div>
