@@ -1,12 +1,11 @@
 <?php
 
-include ('../reusable/conn.php');
-include '../reusable/config.php';
-include ('../reusable/functions.php');
+include '../reusable/conn.php';
+include '../reusable/nav.php';
+include '../reusable/functions.php';
 
 secure();
 
-include '../reusable/nav.php' ;
 
 $query = 'SELECT id, first_name, last_name, points, team_name
     FROM drivers
