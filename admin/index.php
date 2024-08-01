@@ -1,7 +1,7 @@
 <?php
 
 include ('../reusable/conn.php');
-include '../reusable/config.php';
+include '../reusable/nav.php';
 include ('../reusable/functions.php');
 
 secure();
@@ -21,7 +21,13 @@ $driver_query = 'SELECT id, first_name, last_name, points, team_name
 
 $driver_results = mysqli_query($connect, $driver_query);
 
-include '../reusable/nav.php';
+$user_query = 'SELECT id, username, role, creation_date
+    FROM users
+    ORDER BY creation_date DESC
+    LIMIT 3;';
+
+$user_results = mysqli_query($connect, $user_query);
+
 
 ?>
 
@@ -33,8 +39,6 @@ include '../reusable/nav.php';
             <th>ID</th>
             <th>Team Name</th>
             <th>Engine Supplier</th>
-            <th></th>
-            <th></th>
             <th></th>
         </tr>
         <?php create_team_table($team_results) ?>
@@ -53,12 +57,25 @@ include '../reusable/nav.php';
             <th>Points</th>
             <th>Team</th>
             <th></th>
-            <th></th>
-            <th></th>
         </tr>
         <?php create_driver_table($driver_results) ?>
     </table>
     <a href="drivers.php">View All</a>
+</div>
+
+<div>
+    <h2>Manage Users</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Creation Date</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+        <?php create_user_table($user_results, "users/") ?>
+    </table>
+    <a href="users/index.php">View All</a>
 </div>
 
 <?php

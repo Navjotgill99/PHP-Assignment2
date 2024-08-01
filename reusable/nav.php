@@ -1,5 +1,6 @@
 <?php
 $root_dir = "/PHP-Assignment2/";
+include "config.php";
 ?>
 <!doctype html>
 <html>
@@ -26,11 +27,14 @@ $root_dir = "/PHP-Assignment2/";
         <li>
           <a href=<?php echo $root_dir?>>Home</a>
         </li>
-          <?php if (isset($_SESSION['id'])) { ?>
-            <li><a href=<?php echo "{$root_dir}admin/index.php" ?>>Dashboard</a></li>
-            <li><a href=<?php echo "{$root_dir}admin/logout.php" ?>>Logout</a></li>
+          <?php if (isset($_SESSION['id'])) { 
+            if($_SESSION['role'] == "admin") { ?>
+            <li><a href="<?php echo "{$root_dir}admin/index.php" ?>">Dashboard</a></li>
+            <?php }?>
+            <li><a href="<?php echo "{$root_dir}logout.php" ?>">Logout</a></li>
             <?php } else { ?>
-              <li><a href=<?php echo "{$root_dir}admin/login.php" ?>>Login</a></li>
+              <li><a href="<?php echo "{$root_dir}login.php" ?>">Login</a></li>
+              <li><a href="<?php echo "{$root_dir}signup.php"?>">Sign Up</a></li>
               <?php } ?>
       </ul>
     </div>

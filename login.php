@@ -1,18 +1,29 @@
 <?php
 
-include( '../reusable/conn.php' );
-include '../reusable/config.php';
-include( '../reusable/functions.php' );
+include 'reusable/conn.php' ;
+include 'reusable/nav.php';
+include 'reusable/functions.php' ;
+
+if(isset($_SESSION['id'])){
+  if($_SESSION['role'] == "admin"){
+    header('Location: admin/index.php');
+    die();
+  }
+  header('Location: index.php');
+  die();
+}
 
 if( isset( $_POST['username'] ) )
 {
+
+  $username = $_POST['username'];
+  $password = md5($_POST['password']);
   
-  $team_query = 'SELECT *
+  $team_query = "SELECT *
     FROM users
-    WHERE username = "'.$_POST['username'].'"
-    AND password = "'.md5( $_POST['password'] ).'"
-    AND active = "1"
-    LIMIT 1';
+    WHERE username ='{$username}'
+    AND password = '{$password}'
+    LIMIT 1";
   $result = mysqli_query( $connect, $team_query );
   
   if( mysqli_num_rows( $result ) )
@@ -40,7 +51,6 @@ if( isset( $_POST['username'] ) )
   } 
   
 }
-include '../reusable/nav.php' ;
 ?>
 
 <div style="max-width: 400px; margin:auto">
@@ -61,8 +71,10 @@ include '../reusable/nav.php' ;
   
 </div>
 
+<a href="signup.php">Don't have an account? Sign up here.</a>
+
 <?php
 
-include '../reusable/footer.php' ;
+include 'reusable/footer.php' ;
 
 ?>
