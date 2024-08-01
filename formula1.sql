@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 29, 2024 at 04:54 PM
+-- Generation Time: Aug 01, 2024 at 06:05 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -83,16 +83,18 @@ CREATE TABLE `users` (
   `id` int(3) NOT NULL,
   `username` varchar(12) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `active` tinyint(1) NOT NULL,
-  `role` varchar(7) NOT NULL
+  `role` varchar(7) NOT NULL,
+  `creation_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `active`, `role`) VALUES
-(1, 'root', '63a9f0ea7bb98050796b649e85481845', 1, 'admin');
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `creation_date`) VALUES
+(1, 'root', '63a9f0ea7bb98050796b649e85481845', 'admin', '2024-08-01 10:17:32'),
+(4, 'user', '1a1dc91c907325c69271ddf0c944bc72', 'user', '2024-08-01 15:25:20'),
+(5, 'user2', 'c1572d05424d0ecb2a65ec6a82aeacbf', 'user', '2024-08-01 15:36:31');
 
 --
 -- Indexes for dumped tables
@@ -132,7 +134,7 @@ ALTER TABLE `drivers`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
