@@ -52,7 +52,8 @@ function create_team_table($rows)
             <td><?php echo $record['team_id'] ?></td>
             <td><?php echo $record['team_name'] ?></td>
             <td><?php echo $record['engine_supplier'] ?></td>
-            <td><a href="edit.php?id=<?php echo $record['team_id']?>">Edit</a></td>
+            <td><a href="teams/edit.php?id=<?php echo $record['team_id']?>">Edit</a></td>
+            <td><a href="teams/delete.php?id=<?php echo $record['team_id']?>">Delete</a></td>
         </tr>
     <?php endwhile;
 } ?>

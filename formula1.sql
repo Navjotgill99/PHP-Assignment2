@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 01, 2024 at 06:05 PM
+-- Generation Time: Aug 02, 2024 at 07:12 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -40,10 +40,9 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`id`, `first_name`, `last_name`, `points`, `team_id`) VALUES
-(101, 'Kimi', 'Raikonnen', 102, 1),
 (102, 'Lewis', 'Hamilton', 12, 2),
 (103, 'George', 'Russell', 45, 2),
-(104, 'Nico', 'Hulkenburg', 101, 6),
+(104, 'Nico', 'Hulkenburg', 101, NULL),
 (105, 'Logan', 'Sargeant', 35, 5),
 (106, 'Lando', 'Norris', 75, 4),
 (107, 'Charles', 'Leclerc', 71, 1),
@@ -131,6 +130,12 @@ ALTER TABLE `drivers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `team_id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -144,7 +149,7 @@ ALTER TABLE `users`
 -- Constraints for table `drivers`
 --
 ALTER TABLE `drivers`
-  ADD CONSTRAINT `drivers_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`team_id`);
+  ADD CONSTRAINT `drivers_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`team_id`) ON DELETE SET NULL ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

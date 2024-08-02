@@ -33,12 +33,13 @@ $user_results = mysqli_query($connect, $user_query);
 
 <div>
     <h2>Manage Teams</h2>
-    <a href="#">Add Team</a>
+    <a href="teams/add.php">Add Team</a>
     <table>
         <tr>
             <th>ID</th>
             <th>Team Name</th>
             <th>Engine Supplier</th>
+            <th></th>
             <th></th>
         </tr>
         <?php create_team_table($team_results) ?>
