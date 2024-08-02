@@ -17,7 +17,7 @@ $result = mysqli_query( $connect, $query );
 
 <div>
     <h2> Manage Drivers</h2>
-    <a href="#" class="btn">Add Driver</a>
+    <a href=".\drivers\addDriver.php" class="btn">Add Driver</a>
     <table>
         <tr>
             <th>ID</th>
@@ -25,7 +25,6 @@ $result = mysqli_query( $connect, $query );
             <th>Last Name</th>
             <th>Points</th>
             <th>Team</th>
-            <th></th>
             <th></th>
             <th></th>
         </tr>
@@ -39,3 +38,4 @@ $result = mysqli_query( $connect, $query );
 include '../reusable/footer.php';
 
 ?>
+

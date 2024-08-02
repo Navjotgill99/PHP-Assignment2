@@ -68,7 +68,8 @@ function create_driver_table($rows)
             <td><?php echo $record['last_name'] ?></td>
             <td><?php echo $record['points'] ?></td>
             <td><?php echo $record['team_name'] ?></td>
-            <td><a href="edit.php?id=<?php echo $record['id']?>">Edit</a></td>
+            <td><a href="..\admin\drivers\editDriver.php?id=<?php echo $record['id']?>">Edit</a></td>
+            <td><a href="..\admin\drivers\deleteDriver.php?id=<?php echo $record['id']?>">Delete</a></td>
         </tr>
     <?php endwhile;
 } ?>
