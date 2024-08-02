@@ -13,16 +13,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $points = $_POST['points'];
     $team_id = $_POST['team_id'];
 
-    $sql = "UPDATE drivers SET first_name='$first_name', last_name='$last_name', points=$points, team_id=$team_id WHERE id=$id";
-
+    $query1 = "UPDATE drivers SET first_name='$first_name', last_name='$last_name', points=$points, team_id=$team_id WHERE id=$id";
+    
+    if ($connect->query($query1) === TRUE) {
+        header('Location:  ../../admin/drivers.php');
+    } else {
+        echo "Error: " . $query1 . "<br>" . $connect->error;
+    }
 }
 
-$sql = "SELECT * FROM drivers WHERE id=$id";
-$result = $connect->query($sql);
+$query2 = "SELECT * FROM drivers WHERE id=$id";
+$result = $connect->query($query2);
 $driver = $result->fetch_assoc();
 
-$sql = "SELECT * FROM teams";
-$teams = $connect->query($sql);
+$query3 = "SELECT * FROM teams";
+$teams = $connect->query($query3);
 ?>
 
 
