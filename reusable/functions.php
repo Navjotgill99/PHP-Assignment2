@@ -84,6 +84,7 @@ function create_user_table($rows, $directory)
             <td><?php echo $record['creation_date'] ?></td>
             <td><?php echo $record['role']?></td>
             <td><a href="<?php  echo "{$directory}edit.php?id={$record['id']}"?>">Edit</a></td>
+            <td><a href="<?php  echo "{$directory}delete.php?id={$record['id']}"?>">Delete</a></td>
         </tr>
     <?php endwhile;
 } ?>

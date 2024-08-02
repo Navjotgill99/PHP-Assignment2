@@ -80,10 +80,11 @@ $user_results = mysqli_query($connect, $user_query);
             <th>Creation Date</th>
             <th>Role</th>
             <th></th>
+            <th></th>
         </tr>
         <?php create_user_table($user_results, "users/") ?>
     </table>
-    <a href="users/index.php" class="btnAll">View All</a>
+    <a href="users.php" class="btnAll">View All</a>
 </div>
 
 <?php

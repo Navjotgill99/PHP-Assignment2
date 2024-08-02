@@ -6,10 +6,9 @@ body {
     font-style: normal;
     padding: 0;
     margin: 0;
-    background: url('../public/formula1.jpg') no-repeat fixed;
+    background: url('../public/formula1.png') no-repeat fixed;
     background-position: top;
     background-size: cover;
-    backdrop-filter: blur(10px);
 }
 
 /* Navegation Bar */

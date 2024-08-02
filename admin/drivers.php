@@ -11,11 +11,11 @@ $query = 'SELECT id, first_name, last_name, points, team_name
     FROM drivers
     JOIN teams
     ON drivers.team_id = teams.team_id';
-$result = mysqli_query( $connect, $query );
+$result = mysqli_query($connect, $query);
 
 ?>
 
-<div>
+<div class="content-box">
     <h2> Manage Drivers</h2>
     <a href=".\drivers\addDriver.php" class="btn">Add Driver</a>
     <table>
@@ -28,14 +28,16 @@ $result = mysqli_query( $connect, $query );
             <th></th>
             <th></th>
         </tr>
-        <?php create_driver_table($result)?>
+        <?php create_driver_table($result) ?>
     </table>
-</div>
 
+    <div class="container mt-3">
+        <a href="index.php" class="btn btn-secondary">Return to Dashboard</a>
+    </div>
+</div>
 
 <?php
 
 include '../reusable/footer.php';
 
 ?>
-
