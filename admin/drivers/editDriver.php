@@ -35,6 +35,8 @@ $teams = $connect->query($query3);
     <title>Edit Driver</title>
 </head>
 <body>
+
+<div class="editDriver">
     <h1>Edit Driver</h1>
     <form method="post">
         <label>First Name:</label>
@@ -58,7 +60,8 @@ $teams = $connect->query($query3);
         <button type="submit">Update</button>
     </form>
     
-    <a href="..\drivers.php">Back to Drivers</a>
+    <a href="..\drivers.php" class="btnDrivers">Back to Drivers</a>
+            </di>
 </body>
 
 <?php

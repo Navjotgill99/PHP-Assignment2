@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
 
 <h2>Delete User - <?php echo $record['username'];?></h2>
 
-<p>Are you sure you want to delete this user? This action cannot be undone.</p>
 <form method="post">
+    <p>Are you sure you want to delete this user? This action cannot be undone.</p>
     <input type="submit" value="Yes, Delete this user">
 </form>

@@ -32,15 +32,18 @@ if (!mysqli_num_rows($result)) {
 $record = mysqli_fetch_assoc($result);
 ?>
 
-<a href="../teams.php">Return to Teams List</a>
+<div class="deleteTeam">
+
+<a href="../teams.php" class="btnList">Return to Teams List</a>
 
 <h2>Delete Team - <?php echo htmlentities($record['team_name']); ?></h2>
 
-<p>Are you sure you want to delete this team? This action cannot be undone.</p>
-
 <form method="post">
-    <input type="submit" value="Yes, Delete this team">
+<p>Are you sure you want to delete this team? This action cannot be undone.</p>
+<input type="submit" value="Yes, Delete this team">
 </form>
+
+</div>
 
 <?php
 include '../../reusable/footer.php';

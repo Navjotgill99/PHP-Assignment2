@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -9,6 +9,7 @@ body {
     background: url('../public/formula1.jpg') no-repeat fixed;
     background-position: top;
     background-size: cover;
+    backdrop-filter: blur(10px);
 }
 
 /* Navegation Bar */
@@ -126,4 +127,90 @@ th {
     background-color: green;
     color: white;
     padding: 10px;
+    display: block;
+    width: 100px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.btn:hover {
+    background-color: darkgreen;
+}
+
+.btnAll {
+    text-decoration: none;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 100px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 5px;
+    transition: 0.5s ease-in-out;
+}
+
+.btnAll:hover {
+    background-color: darkgray;
+}
+
+.btnList {
+    background-color: #c8bb11;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 150px;
+    border-radius: 6px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.btnDrivers {
+    background-color: gray;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 150px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* admin */
+
+.content-box {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.content-box h2 {
+    color: white;
+    text-align: center;
+}
+
+.addTeam, .editTeam, .deleteTeam, .addDriver, .editDriver, .deleteDriver {
+    height: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addTeam h2, .editTeam h2, .deleteTeam  h2, .addDriver  h1, .editDriver  h1, .deleteDriver h1{
+    background-color: black;
+    color: white;
+    padding: 20px 40px;
+}
+
+form {
+    background-color: white;
+    padding: 40px;
 }

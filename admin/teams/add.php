@@ -19,8 +19,8 @@ if (isset($_POST['team_name'])) {
     }
 }
 ?>
-
-<a href="../teams.php">Return to Teams List</a>
+<div class="addTeam">
+<a href="../teams.php" class="btnList">Return to Teams List</a>
 
 <h2>Add Team</h2>
 
@@ -33,7 +33,7 @@ if (isset($_POST['team_name'])) {
     
     <input type="submit" value="Add Team">
 </form>
-
+</div>
 <?php
 include '../../reusable/footer.php';
 ?>

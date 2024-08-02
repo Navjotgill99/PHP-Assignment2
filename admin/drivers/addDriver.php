@@ -29,6 +29,7 @@ $teams = $connect->query($query);
     <title>Add Driver</title>
 </head>
 <body>
+    <div class="addDriver">
     <h1>Add Driver</h1>
     <form method="post">
         <label>First Name:</label>
@@ -49,7 +50,8 @@ $teams = $connect->query($query);
         <br>
         <button type="submit">Add</button>
     </form>
-    <a href="..\drivers.php">Back to Drivers</a>
+    <a href="..\drivers.php" class="btnDrivers">Back to Drivers</a>
+            </div>
 </body>
 
 <?php

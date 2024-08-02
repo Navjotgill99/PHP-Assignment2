@@ -30,13 +30,16 @@ $driver = $result->fetch_assoc();
     <title>Delete Driver</title>
 </head>
 <body>
+<div class="deleteDriver">
+
     <h1>Delete Driver</h1>
-    <p>Are you sure you want to delete <?= $driver['first_name'] ?> <?= $driver['last_name'] ?>?</p>
     <form method="post">
+    <p>Are you sure you want to delete <?= $driver['first_name'] ?> <?= $driver['last_name'] ?>?</p>
         <button type="submit" name="confirm" value="Yes">Yes</button>
         <button type="submit" name="confirm" value="No">No</button>
     </form>
-    <a href="..\drivers.php">Back to Drivers</a>
+    <a href="..\drivers.php" class="btnDrivers">Back to Drivers</a>
+</div>
 </body>
 
 <?php

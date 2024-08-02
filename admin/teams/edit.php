@@ -36,7 +36,9 @@ if (!mysqli_num_rows($result)) {
 $record = mysqli_fetch_assoc($result);
 ?>
 
-<a href="../teams.php">Return to Teams List</a>
+<div class="editTeam">
+
+<a href="../teams.php" class="btnList">Return to Teams List</a>
 
 <h2>Edit Team - <?php echo htmlentities($record['team_name']); ?></h2>
 
@@ -49,6 +51,7 @@ $record = mysqli_fetch_assoc($result);
     
     <input type="submit" value="Save Changes">
 </form>
+</div>
 
 <?php
 include '../../reusable/footer.php';

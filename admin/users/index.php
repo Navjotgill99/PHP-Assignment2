@@ -12,7 +12,7 @@ $result = mysqli_query( $connect, $query );
 
 ?>
 
-<div>
+<div class="content-box">
     <h2> Manage Users</h2>
     <a href="../../signup.php" class="btn">Add User</a>
     <table>

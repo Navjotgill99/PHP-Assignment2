@@ -1,4 +1,10 @@
 <?php
+echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+echo '<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">';
+?>
+
+<?php
 
 include ('../reusable/conn.php');
 include '../reusable/nav.php';
@@ -31,9 +37,9 @@ $user_results = mysqli_query($connect, $user_query);
 
 ?>
 
-<div>
+<div class="content-box">
     <h2>Manage Teams</h2>
-    <a href="teams/add.php">Add Team</a>
+    <a href="teams/add.php" class="btn">Add Team</a>
     <table>
         <tr>
             <th>ID</th>
@@ -44,12 +50,12 @@ $user_results = mysqli_query($connect, $user_query);
         </tr>
         <?php create_team_table($team_results) ?>
     </table>
-    <a href="teams.php">View All</a>
+    <a href="teams.php" class="btnAll">View All</a>
 </div>
 
-<div>
+<div class="content-box">
     <h2> Manage Drivers</h2>
-    <a href=".\drivers\addDriver.php">Add Driver</a>
+    <a href=".\drivers\addDriver.php" class="btn">Add Driver</a>
     <table>
         <tr>
             <th>ID</th>
@@ -62,10 +68,10 @@ $user_results = mysqli_query($connect, $user_query);
         </tr>
         <?php create_driver_table($driver_results) ?>
     </table>
-    <a href="drivers.php">View All</a>
+    <a href="drivers.php" class="btnAll">View All</a>
 </div>
 
-<div>
+<div class="content-box">
     <h2>Manage Users</h2>
     <table>
         <tr>
@@ -77,7 +83,7 @@ $user_results = mysqli_query($connect, $user_query);
         </tr>
         <?php create_user_table($user_results, "users/") ?>
     </table>
-    <a href="users/index.php">View All</a>
+    <a href="users/index.php" class="btnAll">View All</a>
 </div>
 
 <?php
