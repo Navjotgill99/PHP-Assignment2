@@ -48,7 +48,7 @@ $user_results = mysqli_query($connect, $user_query);
 
 <div>
     <h2> Manage Drivers</h2>
-    <a href="#">Add Driver</a>
+    <a href=".\drivers\addDriver.php">Add Driver</a>
     <table>
         <tr>
             <th>ID</th>
@@ -56,6 +56,7 @@ $user_results = mysqli_query($connect, $user_query);
             <th>Last Name</th>
             <th>Points</th>
             <th>Team</th>
+            <th></th>
             <th></th>
         </tr>
         <?php create_driver_table($driver_results) ?>
