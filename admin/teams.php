@@ -20,6 +20,7 @@ $result = mysqli_query($connect, $query);
             <th>ID</th>
             <th>Team Name</th>
             <th>Engine Supplier</th>
+            <th>Image</th>
             <th></th>
             <th></th>
         </tr>

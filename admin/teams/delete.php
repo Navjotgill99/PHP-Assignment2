@@ -12,10 +12,23 @@ if (!isset($_GET['id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_GET['id'];
-    $query = "DELETE FROM teams WHERE team_id = '{$id}' LIMIT 1";
-    mysqli_query($connect, $query);
 
-    set_message('Team has been deleted');
+    // Get the image path before deleting the record
+    $query = "SELECT image_path FROM teams WHERE team_id = '{$id}' LIMIT 1";
+    $result = mysqli_query($connect, $query);
+    $team = mysqli_fetch_assoc($result);
+
+    // Delete the record
+    $query = "DELETE FROM teams WHERE team_id = '{$id}' LIMIT 1";
+    if (mysqli_query($connect, $query)) {
+        // Delete the image file
+        if (file_exists($team['image_path'])) {
+            unlink($team['image_path']);
+        }
+        set_message('Team has been deleted');
+    } else {
+        set_message('Failed to delete team');
+    }
     header('Location: ../teams.php');
     die();
 }

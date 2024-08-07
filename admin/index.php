@@ -47,6 +47,7 @@ $user_results = mysqli_query($connect, $user_query);
             <th>Engine Supplier</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
         <?php create_team_table($team_results) ?>
     </table>
