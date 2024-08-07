@@ -53,8 +53,9 @@ if( isset( $_POST['username'] ) )
 }
 ?>
 
-<div style="max-width: 400px; margin:auto">
+<div class="content-box" style="max-width: 400px; margin:auto">
 
+  <h2>Login</h2>
   <form method="post" id="login">
     <div>
       <label for="username">Username:</label>
@@ -68,10 +69,10 @@ if( isset( $_POST['username'] ) )
   
     <input type="submit" name="submit" value="Login">
   </form>
-  
+  <div style="background-color: white; text-align: center;">
+    <a href="signup.php">Don't have an account? Sign up here.</a>
+  </div>
 </div>
-
-<a href="signup.php">Don't have an account? Sign up here.</a>
 
 <?php
 
