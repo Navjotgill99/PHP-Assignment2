@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 02, 2024 at 07:12 PM
+-- Generation Time: Aug 07, 2024 at 04:36 PM
 -- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- PHP Version: 8.1.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,7 +46,7 @@ INSERT INTO `drivers` (`id`, `first_name`, `last_name`, `points`, `team_id`) VAL
 (105, 'Logan', 'Sargeant', 35, 5),
 (106, 'Lando', 'Norris', 75, 4),
 (107, 'Charles', 'Leclerc', 71, 1),
-(108, 'Nico', 'Rosberg', 42, 6);
+(108, 'Nico', 'Rosberg', 42, NULL);
 
 -- --------------------------------------------------------
 
@@ -57,20 +57,20 @@ INSERT INTO `drivers` (`id`, `first_name`, `last_name`, `points`, `team_id`) VAL
 CREATE TABLE `teams` (
   `team_id` int(64) NOT NULL,
   `team_name` varchar(200) NOT NULL,
-  `engine_supplier` varchar(200) NOT NULL
+  `engine_supplier` varchar(200) NOT NULL,
+  `image_path` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`team_id`, `team_name`, `engine_supplier`) VALUES
-(1, 'Ferrari', 'Ferrari'),
-(2, 'Mercedes AMG', 'Mercedes'),
-(3, 'Red Bull Racing', 'Honda'),
-(4, 'McLaren', 'Mercedes'),
-(5, 'Williams Racing', 'Mercedes'),
-(6, 'Sauber', 'Ferrari');
+INSERT INTO `teams` (`team_id`, `team_name`, `engine_supplier`, `image_path`) VALUES
+(1, 'Ferrari', 'Ferrari', '../uploads/Ferrari.jpg'),
+(2, 'Mercedes AMG', 'Mercedes', '../uploads/Mercedes.jpg'),
+(3, 'Red Bull Racing', 'Honda', '../uploads/Honda.jpeg'),
+(4, 'McLaren', 'Mercedes', '../uploads/Mc Mercedes.jpg'),
+(5, 'Williams Racing', 'Mercedes', '../uploads/Wi Mercedes.jpg');
 
 -- --------------------------------------------------------
 
@@ -133,7 +133,7 @@ ALTER TABLE `drivers`
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `team_id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `team_id` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
